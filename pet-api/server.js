@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 app.use(express.json());
+app.use(express.static("public"));
 
 const PORTA = 3000;
 
@@ -36,6 +37,8 @@ const nova = { id: proximoId++, nome, semestre };
 disciplinas.push(nova);
 res.status(201).json(nova);
 });
+
+
 
 app.listen(PORTA, () => {
 console.log(`Servidor rodando em http://localhost:${PORTA}`);
